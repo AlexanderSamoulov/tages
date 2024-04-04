@@ -13,6 +13,8 @@ export default defineConfig({
   resolve: {
     alias: [
       { find: '@', replacement: fileURLToPath(new URL('./src', import.meta.url)) },
+      { find: '@pub', replacement: fileURLToPath(new URL('./public', import.meta.url)) },
+      { find: '@comp', replacement: fileURLToPath(new URL('./src/components', import.meta.url)) },
     ],
   },
 });

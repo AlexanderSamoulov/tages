@@ -9,8 +9,11 @@
     }
   ],
   "compilerOptions": {
+    "baseUrl": ".",
     "paths": {
       "@/*": ["./src/*"],
+      "@comp/*": ["./src/components/*"],
+      "@pub/*": ["./public/*"],
     }
   }
 
