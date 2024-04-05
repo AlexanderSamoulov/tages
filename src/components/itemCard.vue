@@ -1,7 +1,7 @@
 <template>
   <div class="card">
     <div v-if="price.old_price " class="card__discount">Скидка</div>
-    <img class="card__img" :src="`./../../public${imageUrl}`" alt="" />
+    <img class="card__img" :src="`./../../${imageUrl}`" alt="" />
     <div class="card__info">
       <div class="card__code">{{ code }}</div>
       <div class="card__name">{{ name }}</div>
@@ -11,9 +11,9 @@
           <span class="card__price_current">{{ price.current_price }}₽</span>
         </div>
         <div class="card__buttons-block">
-          <img src="@pub/img/cart.svg" class="card__add-to-cart" />
+          <img src="@/assets/img/cart.svg" class="card__add-to-cart" />
           <img
-            src="@pub/img/heart-checked.svg"
+            src="@/assets/img/heart-checked.svg"
             class="card__add-to-favourites"
           />
         </div>
