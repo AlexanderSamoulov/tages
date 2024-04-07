@@ -104,6 +104,9 @@ const changeLocalStorage = (option) => {
       color: black;
     }
   }
+  h1{
+    font-size: 36px;
+  }
   .searchBox {
     display: flex;
     align-items: left;

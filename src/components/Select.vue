@@ -1,5 +1,5 @@
 <template>
-  <div class="selectBox">;
+  <div class="selectBox">
     <label class="selectBox__label" :for="sortOption.name">{{ sortOption.name }}</label>
     <select
     class="selectBox__select"
