@@ -1,20 +1,31 @@
 <template>
   <div class="selectBox">
-    <label for="">{{ all.name }}</label>
-    <select name="" id="">
-      <option v-for="option in all.options" :key="option.id" value="">{{ option.name }}</option>
+    <label :for="sortOption.name">{{ sortOption.name }}</label>
+    <select
+      :id="sortOption.name"
+      :value="modelValue"
+      @change="emit('update:modelValue', $event.target.value)"
+    >
+      <option
+        @select="console.log(111)"
+        v-for="option in sortOption.options"
+        :key="option.id"
+        :value="option.id"
+      >
+        {{ option.name }}
+      </option>
     </select>
   </div>
 </template>
 
 <script setup>
+import { defineProps, defineEmits } from "vue";
+
 defineProps({
-    all:Object,
-  id: Number,
-  label: String,
-  name: String,
-  options: Array,
+  sortOption: Object,
+  modelValue: Number,
 });
+const emit = defineEmits(["update:modelValue"]);
 </script>
 
 <style lang="scss" scoped>
@@ -35,7 +46,7 @@ defineProps({
     font-family: "SF UI Text", sans-serif;
     padding: 0 16px;
     height: 40px;
-    background: url("@/assets/img/arrow_select.svg") no-repeat 95%;
+    background: url("@pub/img/arrow_select.svg") no-repeat 95%;
     background-color: rgba(242, 242, 242, 1);
     font-size: 14px;
     font-weight: 600;

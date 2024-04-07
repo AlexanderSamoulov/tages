@@ -20,10 +20,6 @@ export const sortByPrice = {
   name: "Сортировать по:",
   options: [
     {
-      id: 0,
-      name: "",
-    },
-    {
       id: 1,
       name: "Цена по возрастанию",
     },
