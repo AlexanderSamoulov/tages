@@ -1,13 +1,13 @@
 <template>
-  <div class="selectBox">
-    <label :for="sortOption.name">{{ sortOption.name }}</label>
+  <div class="selectBox">;
+    <label class="selectBox__label" :for="sortOption.name">{{ sortOption.name }}</label>
     <select
+    class="selectBox__select"
       :id="sortOption.name"
       :value="modelValue"
       @change="emit('update:modelValue', $event.target.value)"
     >
       <option
-        @select="console.log(111)"
         v-for="option in sortOption.options"
         :key="option.id"
         :value="option.id"
@@ -35,13 +35,13 @@ const emit = defineEmits(["update:modelValue"]);
   flex-direction: column;
   justify-content: space-between;
   align-items: left;
-  label {
+  .selectBox__label {
     margin-left: 16px;
     margin-bottom: 10px;
     color: rgba(79, 79, 79, 1);
     font-size: 12px;
   }
-  select {
+  .selectBox__select {
     position: relative;
     font-family: "SF UI Text", sans-serif;
     padding: 0 16px;
@@ -55,19 +55,6 @@ const emit = defineEmits(["update:modelValue"]);
     &:focus {
       border: none;
     }
-
-    /*  & *{
-        font-size: 14px;
-        font-weight: 100;
-    } */
   }
-}
-select:after {
-  content: "1111";
-  /* display: block; */
-  /* background-image: url('@pub/img/arrow_select.svg'); */
-  /* 	position: absolute; */
-  /* right: 5px;
-	top: 5px; */
 }
 </style>
